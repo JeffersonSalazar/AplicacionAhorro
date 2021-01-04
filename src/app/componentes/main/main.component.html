@@ -1,0 +1,64 @@
+<!-- Modal del score -->
+<main *ngIf="main_modal">
+    <div class="content-modal">
+        <pre class="cierre-modal">
+            <strong (click)="close_modal()">X</strong>
+        </pre>
+
+        <h1>Cuida el Planeta</h1>
+
+        <p> 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Similique ipsum ratione in, error quod nihil sit non quisquam
+            Placeat rerum ipsum, recusandae quos maiores ipsam.
+        </p>
+        <p> 
+            nihil sit non quisquam! Placeat rerum ipsum recusandae 
+            quos maiores ipsam quisquam, facere eos aliquid 
+            sit enim corporis amet.
+        </p>
+        <p>
+            Similique ipsum ratione in error quod nihil sit non quisquam
+            nihil sit non quisquam! Placeat.
+        </p>
+
+        <pre class="creador-app">Made by Jefferson Salazar</pre>
+    </div>
+</main>
+
+<!-- Cabezera/Titulo -->
+<header>
+    <h2>Ahorra Energia</h2>
+</header>
+
+<!-- Contenedor principal de las secciones de la aplicacion -->
+<div class="content-app">
+    <section class="content-grid">
+        <div class="play-comentario" [ngClass]=" mostrar_comentario ? 'show-img':'ocult-img' ">
+            <h3>! Hey... apagalo ¡</h3>
+        </div>
+
+        <div class="play-bombillo">
+            <img [src]="change_foco" [alt]="change_foco">
+        </div>
+        
+        <div class="play-progress">
+            <section class="content-progress">
+                <div class="progress-bar" data-label="Ayuda al planeta" [ngStyle]="{ 'width.%': width_progress }"></div>
+            </section>
+        </div>
+        
+        <div class="play-img" [ngClass]=" mostrar_comentario ? 'show-img':'ocult-img' ">
+            <img src="../../../assets/img/os1.png" alt="imagen">
+        </div>
+        
+        <div class="play-btn">
+            <button type="button" class="btn-off" (click)="stop_off()" [className]="cambio_boton ? 'color-on': 'color-off'">OFF</button>
+            <button type="button" class="btn-on" (click)="contador()" [className]="cambio_boton ? 'color-off': 'color-on'">ON</button>
+        </div>
+        
+        <div class="play-contador">
+            <p>{{ contador_on }}</p>
+        </div>
+    </section>
+</div>
